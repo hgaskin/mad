@@ -16,7 +16,9 @@ import { useContext, useEffect, useState } from 'react'
 export default function NftBalance() {
   const {
     appStatus,
-    address
+    address,
+    getNFTs,
+    balanceNFT
   } = useContext(UserContext)
 
   const [hasClaimedNFT, setHasClaimedNFT] = useState(false);
@@ -31,6 +33,7 @@ export default function NftBalance() {
     const checkBalance = async () => {
       try {
         const balance = await editionDrop.balanceOf(address, 1);
+        console.log('NFT BALANCE:', balance)
         if (balance.gt(0)) {
           setHasClaimedNFT(true);
           console.log("🎉 You have an NFT!", balance);
@@ -44,6 +47,7 @@ export default function NftBalance() {
       }
     };
     checkBalance();
+    getNFTs();
   }, [address, editionDrop]);
 
   return (
@@ -56,7 +60,7 @@ export default function NftBalance() {
       
       <main className="mb-12 flex w-full flex-1 flex-col items-center justify-center px-10 md:px-20 text-center">
       
-{/* <h1>{balance}</h1> */}
+{console.log('NFTZZZZ', balanceNFT)}
 
 
         <h1 className=" my-4 font-serif text-4xl">M.</h1>
@@ -68,6 +72,8 @@ export default function NftBalance() {
         
 
 { hasClaimedNFT ? <h1>"🎉 You have an NFT!"</h1> : <h1>Fuck, No NFT</h1> }
+
+
    
        
       </main>

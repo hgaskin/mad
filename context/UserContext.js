@@ -56,25 +56,13 @@ export const UserProvider = ({ children }) => {
   const getNFTs = async () => {
     console.log('hit getNFTs', currentAccount)
     const response = await fetch(
-      'https://api.rarible.org/v0.1/items/byOwner/?owner=ETHEREUM:' +
-        currentAccount
+      'https://api-staging.rarible.org/v0.1/items/byOwner/?owner=ETHEREUM:' +
+        address
     )
     const data = await response.json()
     console.log('getNFTS response2', data)
-    setBalanceNFT(data)
-    console.log('nft responses', balanceNFT)
-
-    if (data) {
-      balanceNFT.forEach(function (contract) {
-        data['items'].forEach(function (item) {
-          if (item['contract'] == 'ETHEREUM:' + contract) {
-            valid = true
-            console.log('valid', valid)
-          }
-        })
-      })
-    }
-  }
+    setBalanceNFT(data)  
+}
 
   /**
    * Initiates MetaMask wallet connection
@@ -128,6 +116,7 @@ export const UserProvider = ({ children }) => {
         checkIfWalletIsConnected,
         getNFTs,
         connectWithMetamask,
+        balanceNFT,
         address
       }}
     >
