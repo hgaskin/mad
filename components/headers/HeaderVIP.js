@@ -3,6 +3,7 @@ import React from 'react'
 import { UserContext } from '../../context/UserContext'
 import { useContext, useEffect, useState } from 'react'
 import SlideOver from '../SlideOver'
+import Script from 'next/script'
 
 function HeaderReservations () {
       const [openSlider, setOpenSlider] = useState(false)
@@ -14,6 +15,8 @@ function HeaderReservations () {
   return (
     <div className="mt-8 flex min-h-[40vh] w-screen items-center bg-mad">
       <div className="mx-auto max-w-5xl px-12 sm:px-12 lg:px-8">
+      {/* <Script src='http://www.opentable.com/widget/reservation/loader?rid=412810&type=standard&theme=tall&color=1&iframe=true&domain=com&lang=en-US&newtab=false&ot_source=Restaurant%20website'/> */}
+
         <p className="py-14 text-left font-serif text-xl text-white">
           Welcome to VIP. Here you can reserve a seat at a Mademoiselle venue, or book a Mademoiselle event. You can also check your reservations and cancel them.
         </p>

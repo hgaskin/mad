@@ -1,6 +1,8 @@
 import { QuestionMarkCircleIcon } from '@heroicons/react/solid'
 import React, { useContext, useEffect } from 'react'
 import { UserContext } from '../../context/UserContext'
+import Script from 'next/script'
+
 
 
 function ReservationForm () {
@@ -12,10 +14,10 @@ function ReservationForm () {
 
   return (
    
-   <div className=''>
-
+   <div className='flex-col flex'>
+      
 {/* Name */}
-      <div>
+      {/* <div>
         <label htmlFor="email" className="mt-2 block text-sm font-medium text-white">
                 Name
         </label>
@@ -31,7 +33,7 @@ function ReservationForm () {
         </div>
         
 {/* Phone */}
-        <div>
+        {/* <div>
             <label htmlFor="phone-number" className="mt-2 block text-sm font-medium text-white">
                 Phone Number
             </label>
@@ -59,10 +61,10 @@ function ReservationForm () {
             placeholder="+1 (416) 123-4567"
             />
         </div>
-        </div>
+        </div> */}
 
 {/* Email */}
-        <div>
+        {/* <div>
             <label htmlFor="email" className="mt-2 block text-sm font-medium text-white">
                 Email
             </label>
@@ -75,10 +77,33 @@ function ReservationForm () {
             placeholder="you@example.com"
             />
         </div>
-        </div>
+        </div> */}
 
 {/* Account */}
-        <div>
+        {/* <div>
+        <label htmlFor="account-number" className="mt-2 block text-sm font-medium text-white">
+            Account
+        </label>
+        <div className="mt-1 relative rounded-md shadow-sm">
+            <input
+            disabled
+            type="text"
+            name="account-number"
+            id="account-number"
+            className="focus:ring-indigo-500 focus:border-indigo-500 block w-full pr-10 sm:text-sm border-gray-300 rounded-md"
+            placeholder={currentAccount}
+            />
+            <div className="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
+            <QuestionMarkCircleIcon className="h-5 w-5 text-gray-400" aria-hidden="true" />
+            </div>
+        </div>
+        </div> */}
+
+<div className='mt-2 flex justify-center'>
+<iframe src="https://www.opentable.com/widget/reservation/canvas?rid=412810&amp;type=standard&amp;theme=tall&amp;overlay=false&amp;domain=com&amp;lang=en-US&amp;r3uid=UhsLh1DZI&amp;newtab=false&amp;disablega=false&amp;ot_source=Restaurant%20website&amp;color=1" width="288" height="490" frameborder="0" scrolling="no" name="opentable-make-reservation-widget" title="Online Reservations | OpenTable, La Casa Di Lucia - Philadelphia"></iframe>
+</div> 
+
+       <div>
         <label htmlFor="account-number" className="mt-2 block text-sm font-medium text-white">
             Account
         </label>
@@ -97,16 +122,8 @@ function ReservationForm () {
         </div>
         </div>
 
-        <script type='text/javascript' src='//www.opentable.com/widget/reservation/loader?rid=412810&type=standard&theme=tall&color=1&iframe=true&domain=com&lang=en-US&newtab=false&ot_source=Restaurant%20website'></script>
-           
-        <p>Date</p>
-        <input type="text" />
-        <p>Time</p>
-        <input type="text" />
-        <p>Number of guests</p>
-        <input type="text" />
-        <p>Special requests</p>
-        <input type="text" />
+       
+
    </div>
   )
 }
