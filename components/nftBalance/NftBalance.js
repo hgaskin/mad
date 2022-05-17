@@ -1,16 +1,13 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import mademoiselle from '../../assets/mademoiselle.png'
-import Header from '../../components/headers/Header'
-
-
-
 import volDAO from '../../assets/volDAO.png'
 
 import { useEditionDrop } from '@thirdweb-dev/react'
 
 import { UserContext } from '../../context/UserContext'
 import { useContext, useEffect, useState } from 'react'
+
 
 
 export default function NftBalance() {
@@ -32,8 +29,8 @@ export default function NftBalance() {
     }
     const checkBalance = async () => {
       try {
-        const balance = await editionDrop.balanceOf(address, 1);
-        console.log('NFT BALANCE:', balance)
+        const balance = await editionDrop.balanceOf(address, 0);
+        console.log('NFT BALANCE:', balance )
         if (balance.gt(0)) {
           setHasClaimedNFT(true);
           console.log("🎉 You have an NFT!", balance);

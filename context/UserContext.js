@@ -28,8 +28,8 @@ export const UserProvider = ({ children }) => {
 
   // Third Web Provider HOOKS
   const connectWithMetamask = useMetamask()
-
   const address = useAddress();
+  const disconnect = useDisconnect()
 
   /**
    * Checks if there is an active wallet connection
@@ -116,7 +116,8 @@ export const UserProvider = ({ children }) => {
         getNFTs,
         connectWithMetamask,
         balanceNFT,
-        address
+        address,
+        disconnect
       }}
     >
       {children}

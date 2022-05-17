@@ -22,8 +22,8 @@ function classNames(...classes) {
 
 export default function Navbar() {
     const {
-        appStatus,
-        address
+        address,
+        disconnect
       } = useContext(UserContext)
 
   return (
@@ -131,12 +131,12 @@ export default function Navbar() {
                       </Menu.Item>
                       <Menu.Item>
                         {({ active }) => (
-                          <a
-                            href="#"
+                          <button
+                            onClick={disconnect}
                             className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
                           >
                             Sign out
-                          </a>
+                          </button>
                         )}
                       </Menu.Item>
                     </Menu.Items>
