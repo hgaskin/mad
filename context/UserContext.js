@@ -1,6 +1,10 @@
 import { createContext, useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
-import { ethers, Wallet } from 'ethers'
+
+import { useAddress, useDisconnect, useMetamask } from "@thirdweb-dev/react";
+import { useEditionDrop } from '@thirdweb-dev/react'
+
+// import { ethers, Wallet } from 'ethers'
 
 export const UserContext = createContext()
 
@@ -13,11 +17,19 @@ export const UserProvider = ({ children }) => {
 
   const [isLoading, setIsLoading] = useState(false)
 
+  const editionDrop = useEditionDrop("0xB79eC203E0C24CFf4220F5dBB49233366718D970")
+
   const router = useRouter()
 
   useEffect(() => {
     checkIfWalletIsConnected()
   }, [])
+
+
+  // Third Web Provider HOOKS
+  const connectWithMetamask = useMetamask()
+
+  const address = useAddress();
 
   /**
    * Checks if there is an active wallet connection
@@ -88,6 +100,22 @@ export const UserProvider = ({ children }) => {
     }
   }
 
+  const checkBalance = async () => {
+    try {
+      const balance = await editionDrop.balanceOf(address, 0);
+      if (balance) {
+        console.log("🎉 You have an NFT!",balance)
+       
+      } else {
+        console.log("🤷‍♂️ You don't have an NFT.", balance)
+      
+      }
+    } catch (error) {
+      
+      console.error("Failed to get nft balance", error);
+    }
+  };
+
   return (
     <UserContext.Provider
       value={{
@@ -95,9 +123,12 @@ export const UserProvider = ({ children }) => {
         currentAccount,
         accountBalance,
         accountBalanceMad,
+        checkBalance,
         connectWallet,
         checkIfWalletIsConnected,
         getNFTs,
+        connectWithMetamask,
+        address
       }}
     >
       {children}

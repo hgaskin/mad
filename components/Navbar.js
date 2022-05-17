@@ -24,6 +24,8 @@ export default function Navbar() {
     const {
         appStatus,
         currentAccount,
+        connectWithMetamask,
+        address
       } = useContext(UserContext)
 
   return (
@@ -73,7 +75,7 @@ export default function Navbar() {
                 </div>
               </div>
               <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-                <svg className={`ml-4 h-2 w-2 ${appStatus === 'connected' ? 'text-green-400' : 'text-red-400'}`} fill="currentColor" viewBox="0 0 8 8">
+                <svg className={`ml-4 h-2 w-2 ${address ? 'text-green-400' : 'text-red-400'}`} fill="currentColor" viewBox="0 0 8 8">
                     <circle cx={4} cy={4} r={3} />
                 </svg>
 
@@ -89,7 +91,7 @@ export default function Navbar() {
                         className="truncate w-20 md:w-40 xl:w-60 bg-gray-800 p-1 rounded-full text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
                         >
                         <span className="sr-only">View notifications</span>
-                        {currentAccount ? currentAccount : 'Not Connected'}
+                        {address ? address : 'Not Connected'}
                         
                         </button>
                         <div className='text-green-500'>

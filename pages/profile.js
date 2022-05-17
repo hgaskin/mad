@@ -1,8 +1,10 @@
 import React from 'react'
+import NftBalance from '../components/nftBalance/NftBalance'
+
 
 const Profile = () => {
   return (
-    <div>profile?</div>
+    <NftBalance />
   )
 }
 

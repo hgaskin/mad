@@ -7,6 +7,8 @@ const Header = () => {
     const {
         appStatus,
         connectWallet,
+        connectWithMetamask,
+        address
       } = useContext(UserContext)
 
 
@@ -23,11 +25,11 @@ const Header = () => {
        
 
         {
-            appStatus === 'connected' ? null : (
+            address ? null : (
                 <div className="mx-auto max-w-5xl px-12 sm:px-12 lg:px-8">
                 <a
                   href="#"
-                  onClick={connectWallet}
+                  onClick={connectWithMetamask}
                   className={`mb-8 inline-flex items-center justify-center rounded-md border border-transparent bg-white px-5 py-3 text-base font-medium text-mad hover:bg-white hover:text-mad sm:px-12`}
                 >
                   Connect Wallet
