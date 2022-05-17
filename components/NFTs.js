@@ -6,19 +6,19 @@ import whiteCard from '../assets/whiteCard.png'
 const cards = [
   {
     name: 'Blue Card',
-    email: 'leslie.alexander@example.com',
+    email: 'lucas@example.com',
     role: '10 Editions',
     price: '1 ETH',
     imageUrl: blueCard,
-    openseaUrl: 'www.opensea.io',
+    openseaUrl: 'https://testnets.opensea.io/assets/mumbai/0xb79ec203e0c24cff4220f5dbb49233366718d970/0',
   },
   {
     name: 'White Card',
-    email: 'leslie.alexander@example.com',
+    email: 'henry@example.com',
     role: '40 Editions',
     price: '.4 ETH',
     imageUrl: whiteCard,
-    openseaUrl: 'www.opensea.io',
+    openseaUrl: 'https://testnets.opensea.io/assets/mumbai/0xb79ec203e0c24cff4220f5dbb49233366718d970/1',
   },
 ]
 
@@ -41,15 +41,14 @@ export default function NFTs() {
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-1">
-            <div className="min-w-0 flex-1 overflow-hidden text-left ">
-              <span className="absolute inset-0" />
+            <div className="min-w-0 flex-1 overflow-hidden text-left font-serif">
               <p className="text-sm font-medium text-gray-900">{card.name}</p>
               <p className="truncate text-sm text-gray-500">{card.role}</p>
               <p className="truncate text-sm text-gray-500">{card.price}</p>
             </div>
-            <div className="inline-flex items-center justify-center rounded-md bg-mad shadow md:mt-1">
-              <a href={card.openseaUrl} className="inline-flex rounded-md">
-                <p className="p-2 text-xs text-white">Buy on OpenSea</p>
+            <div className="inline-flex items-center justify-center rounded-md bg-mad shadow my-4 md:mt-1">
+              <a href={card.openseaUrl} target="_blank">
+                <p className="p-2 text-xs text-white font-serif">Buy on OpenSea</p>
               </a>
             </div>
           </div>

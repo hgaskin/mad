@@ -1,22 +1,7 @@
-/*
-  This example requires Tailwind CSS v2.0+ 
-  
-  This example requires some changes to your config:
-  
-  ```
-  // tailwind.config.js
-  module.exports = {
-    // ...
-    plugins: [
-      // ...
-      require('@tailwindcss/typography'),
-    ],
-  }
-  ```
-*/
+
 export default function Membership() {
   return (
-    <div className="relative overflow-hidden bg-white py-16">
+    <div className="relative overflow-hidden bg-white mb-10 mt-16">
       <div className="relative px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-5xl text-lg sm:px-6 lg:px-8">
           <h1>
@@ -32,9 +17,9 @@ export default function Membership() {
             members.
           </p>
         </div>
-        <div className="mx-auto mt-4 max-w-5xl text-left text-lg text-gray-500 sm:px-6 lg:px-8">
-          <p className="my-5 mt-8 font-serif ">Why NFTs?</p>
-          <ul role="list">
+        <div className="mx-auto mt-4 max-w-5xl text-left text-lg ml-8 sm:ml-8 lg:ml-12">
+          <p className="my-5 mt-8 font-serif text-black">Why NFTs?</p>
+          <ul className="list-disc" role="list">
             <li>Easily buy and sell membership</li>
             <li>Secure ownership</li>
             <li>Interoperability with emerging technologies</li>
