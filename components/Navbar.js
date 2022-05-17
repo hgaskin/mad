@@ -23,8 +23,6 @@ function classNames(...classes) {
 export default function Navbar() {
     const {
         appStatus,
-        currentAccount,
-        connectWithMetamask,
         address
       } = useContext(UserContext)
 
@@ -86,17 +84,17 @@ export default function Navbar() {
                     <Menu.Button className="bg-gray-800 flex text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
                       <span className="sr-only">Open user menu</span>
                      
-                        <button
+                        <a
                         type="button"
-                        className="truncate w-20 md:w-40 xl:w-60 bg-gray-800 p-1 rounded-full text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
+                        className="truncate w-30 md:w-40 xl:w-60 bg-gray-700 p-1 rounded-full text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
                         >
                         <span className="sr-only">View notifications</span>
-                        {address ? address : 'Not Connected'}
+                        {address ? address : (<p>Not Connected</p>)}
                         
-                        </button>
-                        <div className='text-green-500'>
+                        </a>
+                        {/* <div className='text-green-500'>
                         {appStatus === 'noMetaMask' ? 'No MetaMask Plugin Detected' : ''}
-                        </div>
+                        </div> */}
                   
                     </Menu.Button>
                     

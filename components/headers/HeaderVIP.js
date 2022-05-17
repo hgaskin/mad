@@ -25,7 +25,7 @@ function HeaderReservations () {
                 <a
                   href="#"
                   onClick={openSliderHandler}
-                  className={`mb-8 inline-flex items-center justify-center rounded-md border border-transparent bg-white px-5 py-3 text-base font-medium text-mad hover:bg-green-900 hover:text-white sm:px-12`}
+                  className={`mb-8 inline-flex items-center justify-center rounded-md border border-transparent bg-white px-5 py-3 text-base font-medium text-mad hover:bg-green-500 hover:text-white sm:px-12`}
                 >
                   Make Reservation
                 </a>

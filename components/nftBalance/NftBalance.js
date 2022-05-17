@@ -60,10 +60,7 @@ export default function NftBalance() {
       
       <main className="mb-12 flex w-full flex-1 flex-col items-center justify-center px-10 md:px-20 text-center">
       
-{console.log('NFTZZZZ', balanceNFT)}
-
-
-        <h1 className=" my-4 font-serif text-4xl">M.</h1>
+        <h1 className=" my-4 font-serif text-4xl">My Profile.</h1>
 
         <p className="text-md mt-1 font-serif">Presented by</p>
 
@@ -71,10 +68,42 @@ export default function NftBalance() {
 
         
 
-{ hasClaimedNFT ? <h1>"🎉 You have an NFT!"</h1> : <h1>Fuck, No NFT</h1> }
+{ hasClaimedNFT ? <h1>"🎉 You have an NFT!"</h1> : <h1> "No NFT in your wallet"</h1> }
 
+<div className='text-left'>
+<h1 className=" my-4 font-serif text-xl">My Card's</h1>
 
-   
+<div className="grid grid-cols-1 gap-4 xl:grid-cols-2">
+{hasClaimedNFT && balanceNFT?.items?.map(nft => (
+            <div
+            key={nft.id}
+            className="relative items-center space-x-3 rounded-lg bg-white px-6 py-5 shadow-sm md:flex md:items-center"
+          >
+            <div className="flex-shrink">
+              <Image
+                layout="intrinsic"
+                height={225}
+                width={350}
+                src={nft?.meta?.content[0]?.url}
+                alt=""
+              />
+            </div>
+  
+            <div className="grid grid-cols-2 md:grid-cols-1">
+              <div className="min-w-0 flex-1 overflow-hidden text-left font-serif">
+              <p className="text-lg font-medium text-gray-900">{nft?.meta?.name}</p>
+                <p className="text-sm font-medium text-gray-900">Blockchain: {nft.blockchain}</p>
+                <p className="truncate text-sm text-gray-500">Contract: {nft.contract}</p>
+                <p className="truncate text-sm text-gray-500">Contract Id: {nft.id}</p>
+                <p className="truncate text-sm text-gray-500">TokenId: {nft.tokenId}</p>
+              </div>
+            
+            </div>
+          </div>
+        ))}
+</div>
+
+</div>
        
       </main>
 

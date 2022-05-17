@@ -40,9 +40,8 @@ export const UserProvider = ({ children }) => {
       const addressArray = await window.ethereum.request({
         method: 'eth_accounts',
       })
-      if (addressArray.length > 0) {
+      if (addressArray.length > 0 || address) {
         setAppStatus('connected')
-        setCurrentAccount(addressArray[0])
       } else {
         router.push('/')
         setAppStatus('notConnected')
