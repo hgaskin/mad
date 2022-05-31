@@ -41,7 +41,7 @@ export default function SlideOver({openSlider, setOpenSlider}) {
                 leaveFrom="translate-x-0"
                 leaveTo="translate-x-full"
               >
-                <Dialog.Panel className="pointer-events-auto w-screen max-w-md ">
+                <Dialog.Panel className="pointer-events-auto w-screen max-w-6xl ">
                   <div className="flex h-full flex-col overflow-y-scroll bg-white border-2 border-mad py-6 shadow-xl">
                     <div className="px-4 sm:px-6">
                       <div className="flex items-start justify-between">
@@ -61,15 +61,11 @@ export default function SlideOver({openSlider, setOpenSlider}) {
                     <div className="relative mt-6 flex-1 px-4 sm:px-6">
                       {/* Replace with your content */}
 
-
-
                       <div className="absolute bg-white inset-0 px-4 sm:px-6">
-                        <div className="h-full p-4  bg-mad" aria-hidden="true">
+                        <div className="h-fit p-4 bg-mad" aria-hidden="true">
                             <ReservationForm />
                         </div>
                       </div>
-
-
 
                       {/* /End replace */}
                     </div>

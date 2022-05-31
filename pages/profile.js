@@ -1,11 +1,6 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import NftBalance from '../components/nftBalance/NftBalance'
 
-
-const Profile = () => {
-  return (
-    <NftBalance />
-  )
+export default function Profile() {
+  return <NftBalance />
 }
-
-export default Profile

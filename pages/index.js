@@ -32,7 +32,7 @@ export default function Home() {
       
       <main className="mb-12 flex w-full flex-1 flex-col items-center justify-center px-10 md:px-20 text-center">
       
-        <h1 className=" my-4 font-serif text-4xl">M.</h1>
+        <h1 className=" my-4 font-serif text-4xl">m.</h1>
 
         <p className="text-md mt-1 font-serif">Presented by</p>
 

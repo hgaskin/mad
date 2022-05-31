@@ -1,7 +1,6 @@
-
 export default function Membership() {
   return (
-    <div className="relative overflow-hidden bg-white mb-10 mt-16">
+    <div className="relative mb-10 mt-16 overflow-hidden bg-white">
       <div className="relative px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-5xl text-lg sm:px-6 lg:px-8">
           <h1>
@@ -17,9 +16,9 @@ export default function Membership() {
             members.
           </p>
         </div>
-        <div className="mx-auto mt-4 max-w-5xl text-left text-lg ml-8 sm:ml-8 lg:ml-12">
+        <div className="mx-auto mt-4 ml-8 max-w-5xl text-left text-lg sm:ml-8 lg:ml-12">
           <p className="my-5 mt-8 font-serif text-black">Why NFTs?</p>
-          <ul className="list-disc" role="list">
+          <ul className="list-disc font-serif " role="list">
             <li>Easily buy and sell membership</li>
             <li>Secure ownership</li>
             <li>Interoperability with emerging technologies</li>

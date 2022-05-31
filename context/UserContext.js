@@ -1,7 +1,7 @@
 import { createContext, useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
 
-import { useAddress, useDisconnect, useMetamask } from "@thirdweb-dev/react";
+import { useAddress, useDisconnect, useMetamask } from '@thirdweb-dev/react'
 import { useEditionDrop } from '@thirdweb-dev/react'
 
 // import { ethers, Wallet } from 'ethers'
@@ -17,7 +17,9 @@ export const UserProvider = ({ children }) => {
 
   const [isLoading, setIsLoading] = useState(false)
 
-  const editionDrop = useEditionDrop("0xB79eC203E0C24CFf4220F5dBB49233366718D970")
+  const editionDrop = useEditionDrop(
+    '0xB79eC203E0C24CFf4220F5dBB49233366718D970'
+  )
 
   const router = useRouter()
 
@@ -25,10 +27,9 @@ export const UserProvider = ({ children }) => {
     checkIfWalletIsConnected()
   }, [])
 
-
   // Third Web Provider HOOKS
   const connectWithMetamask = useMetamask()
-  const address = useAddress();
+  const address = useAddress()
   const disconnect = useDisconnect()
 
   /**
@@ -52,6 +53,8 @@ export const UserProvider = ({ children }) => {
     }
   }
 
+  // Gets the balance of the current account and sets balanceNFT variable
+
   const getNFTs = async () => {
     console.log('hit getNFTs', currentAccount)
     const response = await fetch(
@@ -60,8 +63,8 @@ export const UserProvider = ({ children }) => {
     )
     const data = await response.json()
     console.log('getNFTS response2', data)
-    setBalanceNFT(data)  
-}
+    setBalanceNFT(data)
+  }
 
   /**
    * Initiates MetaMask wallet connection
@@ -89,19 +92,16 @@ export const UserProvider = ({ children }) => {
 
   const checkBalance = async () => {
     try {
-      const balance = await editionDrop.balanceOf(address, 0);
+      const balance = await editionDrop.balanceOf(address, 0)
       if (balance) {
-        console.log("🎉 You have an NFT!",balance)
-       
+        console.log('🎉 You have an NFT!', balance)
       } else {
         console.log("🤷‍♂️ You don't have an NFT.", balance)
-      
       }
     } catch (error) {
-      
-      console.error("Failed to get nft balance", error);
+      console.error('Failed to get nft balance', error)
     }
-  };
+  }
 
   return (
     <UserContext.Provider
@@ -117,7 +117,7 @@ export const UserProvider = ({ children }) => {
         connectWithMetamask,
         balanceNFT,
         address,
-        disconnect
+        disconnect,
       }}
     >
       {children}
